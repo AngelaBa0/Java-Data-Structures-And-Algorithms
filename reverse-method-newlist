@@ -1,0 +1,17 @@
+  
+    // This method reverses the elements of list 1 in list 2
+    public LinkedList reverse() 
+    {
+        LinkedList list2 = new LinkedList(); // list 2 is empty
+        if (isEmpty()) // if list 1 is empty
+                return list2;  // list 2 is also empty      
+         Node curr1 = head;
+         while (curr1 != null)   
+         {
+            list2.addHead(curr1.getData()); //add at the end of list 2
+            curr1 = curr1.getNext();
+        } // end while
+        return list2;
+
+    } // end reverse
+    
