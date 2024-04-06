@@ -1,0 +1,24 @@
+public static LinkedList mergeUnsortedList(LinkedList list1, LinkedList list2){
+            Node curr1 = list1.getHead(); 
+            Node curr2 = list2.getHead() ; 
+         LinkedList list3=new LinkedList();
+        if (curr1==null && curr2==null){ 
+            System.out.println("list is empty"); 
+            System.exit(1); //exit since lists are empty 
+        } else {
+            while(curr1!=null && curr2!=null){ 
+            list3.addTail(curr1.getData()); 
+            curr1=curr1.getNext(); 
+            list3.addTail(curr2.getData());
+            curr2=curr2.getNext();
+            }
+        } while (curr2!=null) { 
+            list3.addTail(curr2.getData());
+            curr2=curr2.getNext(); 
+        } while (curr1!=null) { 
+            list3.addTail(curr1.getData());
+            curr1=curr1.getNext(); 
+        }
+        return list3 ; 
+    }
+}
