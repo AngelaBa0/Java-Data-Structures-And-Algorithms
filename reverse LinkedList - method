@@ -1,9 +1,10 @@
   // This method reverses the list elements (without creating a new list)
-    public void reverse2() // This is the method explained in your textbook
+    public void reverse2()
     {
         Node link1, link2, link3;
         
          // if the list is empty or contains only one node
+//countnodes is a method in the linkedlist class
         if (isEmpty() || countNodes()==1)
                 return;  // already reversed
         
