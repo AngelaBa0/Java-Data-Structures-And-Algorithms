@@ -1,0 +1,29 @@
+
+      // This method adds an element to the linked list at the appropriate 
+    // place while keeping the list sorted
+    public void addInPlace(NodeData nd)
+    {
+        Node newNode, prev, curr;
+        newNode = new Node(nd);
+        curr = head;
+        prev = null;
+        // repeat as long as we did not reach the end of the list and we did
+        // not reach a node with data greater than the new element
+        while (curr!= null && nd.compareTo(curr.getData()) > 0) 
+        {
+            prev = curr; // prev is the node that precedes the current node
+            curr = curr.getNext(); // move to the next node
+        } // end while
+        if (prev == null) // inserting at the beginning
+        {
+            newNode.setNext(curr);
+            head = newNode; // the head refer to the new node 
+        }
+           
+        else  // prev != null - inserting in the middle or end
+        {
+            newNode.setNext(curr); // link the new node to the current node
+            prev.setNext(newNode); // link the previous node to the new node
+        } // end else        
+  
+    } // end addInPlace
