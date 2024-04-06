@@ -1,0 +1,22 @@
+  // This method reverses the list elements (without creating a new list)
+    public void reverse2() // This is the method explained in your textbook
+    {
+        Node link1, link2, link3;
+        
+         // if the list is empty or contains only one node
+        if (isEmpty() || countNodes()==1)
+                return;  // already reversed
+        
+         link1 = head;
+         link2 = link1.getNext();
+         link1.setNext(null);
+         while (link2 != null)   
+         {
+           link3 = link2.getNext();
+           link2.setNext(link1);
+           link1 = link2;
+           link2 = link3;
+        } // end while
+        head = link1;
+        
+    } // end reverse2
