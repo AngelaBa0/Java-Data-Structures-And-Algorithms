@@ -1,0 +1,35 @@
+public LinkedList mergeSorted(LinkedList secondList)
+    {
+        LinkedList mergedList = new LinkedList();
+        
+        Node curr1 = head, curr2= secondList.head;
+        while (curr1 != null && curr2 != null) 
+        {
+            if(curr1.getData().compareTo(curr2.getData()) < 0)
+            {
+                mergedList.addTail(curr1.getData());
+                curr1 = curr1.getNext();
+            }
+            else 
+            {
+                mergedList.addTail(curr2.getData());
+                curr2 = curr2.getNext();
+            }
+        } // end while
+        
+        // In case the first list is longer (it still has nodes)
+        while (curr1 != null) 
+        {
+             mergedList.addTail(curr1.getData());
+             curr1 = curr1.getNext();
+        }
+        
+          // In case the second list is longer (it still has nodes)
+        while (curr2 != null) 
+        {
+             mergedList.addTail(curr2.getData());
+             curr2 = curr2.getNext();
+        }
+        return mergedList;
+    } // end mergeSorted
+    
