@@ -1,0 +1,21 @@
+ // This method deletes a node from a list at a given position 
+    public void delete(int position)
+    {
+        Node pred, // to refer to the predecessor of the node at position
+             curr; // to refer to the node that should be deleted
+        if (isEmpty()) // Attempting to delete from an empty list
+            System.out.println("Empty list. Delete operation failed."); 
+        else if (position <=0 || position>countNodes())
+            System.out.println("Invalid position. Delete operation failed.");
+        else if(position == 1) // Deleting at the beginning
+            deleteHead();
+        else // Deleting in the middle or at the end
+        {
+            pred = head;
+            for (int i=1; i <= position - 2; i++)
+                pred = pred.getNext();
+            curr = pred.getNext();
+            pred.setNext(curr.getNext());
+        }//end else
+        
+    } // end delete
