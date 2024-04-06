@@ -1,0 +1,13 @@
+  // This method copies the content of list 1 to list 2
+    public LinkedList copy() //or copy(LinkedList list1) 
+    {
+        LinkedList list2 = new LinkedList(); // list 2 is empty     
+        Node curr1 = head; //or list1.getHead() 
+        while (curr1 != null)   
+        {
+            list2.addTail(curr1.getData()); //add at the end of list 2
+            curr1 = curr1.getNext();
+        } // end while
+        return list2;
+
+    } // end copy
