@@ -1,0 +1,29 @@
+
+public class Node {
+    
+    private NodeData data; 
+    private Node next; 
+    
+    public Node(NodeData nd) { 
+        data=nd;
+        next=null ; 
+    }
+
+    public NodeData getData() {
+        return data;
+    }
+
+    public Node getNext() {
+        return next;
+    }
+
+    public void setData(NodeData data) {
+        this.data = data;
+    }
+
+    public void setNext(Node next) {
+        this.next = next;
+    }
+    
+    
+}
