@@ -1,0 +1,22 @@
+ // This method inserts a node at a given position in the list
+    public void insert(NodeData item, int position)
+    {
+        Node newNode, // to refer to the new node that will contain value
+             pred; // to refer to the predecessor of the node at position
+        if (position <= 0 || position > countNodes()+1)
+            System.out.println("Invalid position. Insert operation failed.");
+        else if (isEmpty()) // Inserting into an empty list
+            head = new Node(item); 
+        else if(position == 1) // Inserting at the beginning
+            addHead(item);
+        else // Inserting in the middle or at the end
+        {
+            newNode = new Node(item);
+            pred = head;
+            for (int i=1; i <= position - 2; i++)
+                pred = pred.getNext();
+            newNode.setNext(pred.getNext());
+            pred.setNext(newNode);
+        }//end else
+            
+    } // end insert
