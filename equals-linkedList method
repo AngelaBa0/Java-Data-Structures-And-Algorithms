@@ -1,0 +1,18 @@
+    public boolean equals1(LinkedList secondList) //or  equals1(LinkedList firstList , LinkedList secondList)
+    {
+        if (countNodes() != secondList.countNodes()) // Different number of nodes
+        //countNodes() method is in the linkedList class 
+            return false;
+        // If the two lists are of equal length, start from the head of each list 
+        Node curr1 = head, curr2= secondList.head;  //or  Node curr1 = firstList.getHead () , Node curr2 = secondList.getHead()
+        while (curr1 != null)  // or curr2 != null 
+        {
+           // node in list1 has different data than corresponding node in list 2?
+            if (curr1.getData().compareTo(curr2.getData())!=0)
+                return false;
+            curr1 = curr1.getNext(); // go to the next node in list 1
+            curr2 = curr2.getNext(); // go to the next node in list 2
+        } // end while        
+        return true;
+
+    } // end equals
