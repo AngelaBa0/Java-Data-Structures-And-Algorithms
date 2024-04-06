@@ -1,0 +1,25 @@
+
+public class NodeData {
+    private int value ; 
+
+    public NodeData(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+    
+    public int compareTo(NodeData nd ){
+        if (value==nd.getValue()) { 
+            return 0 ; 
+        } else if (value> nd.getValue())  { 
+            return 1; 
+        } else return -1 ; 
+    }
+    
+}
